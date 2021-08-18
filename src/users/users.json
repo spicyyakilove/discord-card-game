@@ -1,6 +1,12 @@
 {
     "389897179701182465": {
-        "currency": 100,
+        "currency": 999825632,
+        "cards": [],
+        "cooldown": "01-Jan-2020",
+        "blacklist": false
+    },
+    "873922752644517889": {
+        "currency": 10045,
         "cards": [],
         "cooldown": "01-Jan-2020",
         "blacklist": false
