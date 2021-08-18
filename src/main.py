@@ -1,4 +1,4 @@
-# TODO ALL OWNER COMMANDS -> check for user id in bot_owner()
+# TODO ALL OWNER COMMANDS -> check for user id in bot_owner() 
 # TODO ALL STAFF COMMANDS -> check for user id in bot_staff()
 
 from discord.ext import commands
