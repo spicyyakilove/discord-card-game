@@ -1,15 +1,17 @@
-# TODO ALL OWNER COMMANDS -> check for user id in bot_owner() 
+# TODO ALL OWNER COMMANDS -> check for user id in bot_owner()
 # TODO ALL STAFF COMMANDS -> check for user id in bot_staff()
 
 from discord.ext import commands
 from dotenv import load_dotenv
 from datetime import timedelta
 from random import randint
+from disputils import BotEmbedPaginator
 
 import discord
 import dotenv
 import datetime
 import random
+import disputils
 import time
 import json
 import numpy
@@ -17,6 +19,11 @@ import os
 
 client = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None)
 filepath_users = 'users\\users.json'
+cards_common = 'cards\\common.json'
+cards_uncommon = 'cards\\uncommon.json'
+cards_rare = 'cards\\rare.json'
+cards_legendary = 'cards\\legendary.json'
+
 start_time = time.time()
 load_dotenv()
 
@@ -148,6 +155,55 @@ async def register(ctx):
         embed = discord.Embed(description=f'Oops, it looks like you already have an account.', colour=discord.Color.from_rgb(225,29,98))
         embed.set_author(name=f'{ctx.author.name}', icon_url=f'{ctx.author.avatar_url}')
         embed.set_footer(text='You can use !help to see a full list of commands.')
+        await ctx.send(embed=embed)
+
+@client.command()
+async def inventory(ctx):
+    string_user_id = str(ctx.author.id)
+    with open(filepath_users, 'r') as f:
+        users = json.load(f)
+    if users[string_user_id]['cards']:
+        embeds = []
+        for card in users[string_user_id]["cards"]:
+            if card[-1] == "1":
+                with open(cards_common,'r') as co:
+                    commonfile = json.load(co)
+                card_name = commonfile['common'][card]['name']
+                card_source =commonfile['common'][card]['source']
+                card_image = commonfile['common'][card]['img']
+                card_var = commonfile['common'][card]['event_variant']
+                card_rarity = '🃏'
+            elif card[-1] == "2":
+                with open(cards_uncommon,'r') as co:
+                    commonfile = json.load(co)
+                card_name = commonfile['uncommon'][card]['name']
+                card_source =commonfile['uncommon'][card]['source']
+                card_image = commonfile['uncommon'][card]['img']
+                card_var = commonfile['uncommon'][card]['event_variant']
+                card_rarity = '🃏🃏'
+            elif card[-1] == "3":
+                with open(cards_rare,'r') as co:
+                    commonfile = json.load(co)
+                card_name = commonfile['rare'][card]['name']
+                card_source =commonfile['rare'][card]['source']
+                card_image = commonfile['rare'][card]['img']
+                card_var = commonfile['rare'][card]['event_variant']
+                card_rarity = '🃏🃏🃏'
+            else:
+                with open(cards_legendary,'r') as co:
+                    commonfile = json.load(co)
+                card_name = commonfile['legendary'][card]['name']
+                card_source =commonfile['legendary'][card]['source']
+                card_image = commonfile['legendary'][card]['img']
+                card_var = commonfile['legendary'][card]['event_variant']
+                card_rarity = '🃏🃏🃏🃏'
+            embeds.append(discord.Embed(title=f"{card_name}", description=f"**Rarity: {card_rarity}**").set_image(url=card_image))
+        paginator = BotEmbedPaginator(ctx, embeds)
+        return await paginator.run()
+    else:
+        embed = discord.Embed(description=f'Oops, you don\'t seem to have any cards yet.', colour=discord.Color.from_rgb(225,29,98))
+        embed.set_author(name=f'{ctx.author.name}', icon_url=f'{ctx.author.avatar_url}')
+        embed.set_footer(text='Lorem ipsum dolor sit amet, consectetur adipiscing') 
         await ctx.send(embed=embed)
 
 @client.command()
