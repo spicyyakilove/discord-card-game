@@ -1,7 +1,23 @@
 {
     "389897179701182465": {
         "currency": 1000000,
-        "cards": ["ACEoC1", "ACEoD2", "ACEoH3", "ACEoS4"],
+        "cards": [
+            "ACEoC1",
+            "ACEoD2",
+            "ACEoH3",
+            "ACEoS4"
+        ],
+        "cooldown": "01-Jan-2020",
+        "blacklist": false
+    },
+    "221188745414574080": {
+        "currency": 562,
+        "cards": [
+            "ACEoC1",
+            "ACEoD2",
+            "ACEoH3",
+            "ACEoS4"
+        ],
         "cooldown": "01-Jan-2020",
         "blacklist": false
     }
