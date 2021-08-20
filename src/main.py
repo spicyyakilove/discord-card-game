@@ -178,6 +178,7 @@ async def register(ctx):
 
 
 @client.command()
+@commands.cooldown(1, 86400, commands.BucketType.user)
 async def daily(ctx):
     string_user_id=str(ctx.author.id)
     with open(filepath_blacklisted, 'r') as file:
@@ -218,6 +219,7 @@ async def daily(ctx):
 
 
 @client.command()
+@commands.cooldown(1, 604800, commands.BucketType.user)
 async def weekly(ctx):
     string_user_id=str(ctx.author.id)
     with open(filepath_blacklisted, 'r') as file:
@@ -348,6 +350,18 @@ async def inventory(ctx):
         embed = discord.Embed(description='Oops, it looks like you are blacklisted.', colour=discord.Color.from_rgb(225,29,98))
         embed.set_author(name=f'{ctx.author.name}', icon_url=f'{ctx.author.avatar_url}')
         embed.set_footer(text='You can DM Gareth#3830 for more information.')
+        await ctx.send(embed=embed)
+
+
+
+@client.event
+async def on_command_error(ctx, error):
+    if isinstance(error, commands.CommandOnCooldown):
+        command_name = str(ctx.command).upper()
+        time_left = int(error.retry_after)
+        embed = discord.Embed(description=f'You are on cooldown. Try again in {time_left}s', colour=discord.Color.from_rgb(0,255,133))
+        embed.set_author(name=f'{command_name}', icon_url=f'{ctx.author.avatar_url}')
+        embed.set_footer(text='You can use !help to see a full list of commands.')
         await ctx.send(embed=embed)
 
 
