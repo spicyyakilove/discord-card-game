@@ -114,7 +114,7 @@ def add_card(ctx, card_code):
 
 
 @client.command()
-async def blacklist(ctx, member: discord.Member):
+    async def blacklist(ctx, member: discord.Member):
     staff_user_id = str(ctx.author.id)
     string_user_id = str(member.id)
     if staff_user_id in staff:
@@ -125,9 +125,9 @@ async def blacklist(ctx, member: discord.Member):
             blacklisted[string_user_id]['blacklisted'] = True
             with open(filepath_blacklisted, 'w') as file:
                 json.dump(blacklisted, file, indent=4)
-            await ctx.send(f'`{member} | {string_user_id} has been blacklisted.`')
+            await ctx.send(f'`{member} | **{string_user_id}** has been blacklisted.`')
         else:
-            await ctx.send(f'`{member} | {string_user_id} is already blacklisted.`')
+            await ctx.send(f'`{member} | **{string_user_id}** is already blacklisted.`')
     else:
         await ctx.send('`Oops, you do not have permissions to use this command.`')
 
