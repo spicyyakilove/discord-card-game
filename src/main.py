@@ -359,7 +359,8 @@ async def on_command_error(ctx, error):
     if isinstance(error, commands.CommandOnCooldown):
         command_name = str(ctx.command).upper()
         time_left = int(error.retry_after)
-        embed = discord.Embed(description=f'You are on cooldown. Try again in {time_left}s', colour=discord.Color.from_rgb(0,255,133))
+        converted_time = str(datetime.timedelta(seconds=time_left))
+        embed = discord.Embed(description=f'You are on cooldown.\nTry again in {converted_time}', colour=discord.Color.from_rgb(0,255,133))
         embed.set_author(name=f'{command_name}', icon_url=f'{ctx.author.avatar_url}')
         embed.set_footer(text='You can use !help to see a full list of commands.')
         await ctx.send(embed=embed)
