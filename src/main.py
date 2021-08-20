@@ -114,7 +114,7 @@ def add_card(ctx, card_code):
 
 
 @client.command()
-    async def blacklist(ctx, member: discord.Member):
+async def blacklist(ctx, member: discord.Member):
     staff_user_id = str(ctx.author.id)
     string_user_id = str(member.id)
     if staff_user_id in staff:
