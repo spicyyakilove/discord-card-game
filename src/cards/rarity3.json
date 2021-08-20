@@ -2,8 +2,68 @@
     {
         "1H3": {
             "name": "Ace of Hearts",
-            "image": "https://i.imgur.com/QfESIGv.png",
+            "image": "https://i.imgur.com/ecoKnQ9.png",
             "code": "1H3"
+        },
+        "2H3": {
+            "name": "2 of Hearts",
+            "image": "https://i.imgur.com/1KgRP86.png",
+            "code": "2H3"
+        },
+        "3H3": {
+            "name": "3 of Hearts",
+            "image": "https://i.imgur.com/tjLa0pj.png",
+            "code": "3H3"
+        },
+        "4H3": {
+            "name": "4 of Hearts",
+            "image": "https://i.imgur.com/L5KuLqA.png",
+            "code": "4H3"
+        },
+        "5H3": {
+            "name": "5 of Hearts",
+            "image": "https://i.imgur.com/8SJWl9i.png",
+            "code": "5H3"
+        },
+        "6H3": {
+            "name": "6 of Hearts",
+            "image": "https://i.imgur.com/0P5FVcp.png",
+            "code": "6H3"
+        },
+        "7H3": {
+            "name": "7 of Hearts",
+            "image": "https://i.imgur.com/Pml8kT6.png",
+            "code": "7H3"
+        },
+        "8H3": {
+            "name": "8 of Hearts",
+            "image": "https://i.imgur.com/lDq7eND.png",
+            "code": "8H3"
+        },
+        "9H3": {
+            "name": "9 of Hearts",
+            "image": "https://i.imgur.com/bBwRkii.png",
+            "code": "9H3"
+        },
+        "10H3": {
+            "name": "10 of Hearts",
+            "image": "https://i.imgur.com/dijad6i.png",
+            "code": "10H3"
+        },
+        "11H3": {
+            "name": "Jack of Hearts",
+            "image": "https://i.imgur.com/nYDASiT.png",
+            "code": "11H3"
+        },
+        "12H3": {
+            "name": "Queen of Hearts",
+            "image": "https://i.imgur.com/cc5p8g7.png",
+            "code": "12H3"
+        },
+        "13H3": {
+            "name": "King of Hearts",
+            "image": "https://i.imgur.com/e12umgn.png",
+            "code": "13H3"
         }
     }
 }

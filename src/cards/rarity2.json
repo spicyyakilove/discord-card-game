@@ -2,8 +2,68 @@
     {
         "1D2": {
             "name": "Ace of Diamonds",
-            "image": "https://i.imgur.com/QfESIGv.png",
+            "image": "https://i.imgur.com/1VxZcKq.png",
             "code": "1D2"
+        },
+        "2D2": {
+            "name": "2 of Diamonds",
+            "image": "https://i.imgur.com/GT52yzH.png",
+            "code": "2D2"
+        },
+        "3D2": {
+            "name": "3 of Diamonds",
+            "image": "https://i.imgur.com/VWg05EW.png",
+            "code": "3D2"
+        },
+        "4D2": {
+            "name": "4 of Diamonds",
+            "image": "https://i.imgur.com/IDXjX9S.png",
+            "code": "4D2"
+        },
+        "5D2": {
+            "name": "5 of Diamonds",
+            "image": "https://i.imgur.com/y7MDr90.png",
+            "code": "5D2"
+        },
+        "6D2": {
+            "name": "6 of Diamonds",
+            "image": "https://i.imgur.com/bmo4IN7.png",
+            "code": "6D2"
+        },
+        "7D2": {
+            "name": "7 of Diamonds",
+            "image": "https://i.imgur.com/62hHmkz.png",
+            "code": "7D2"
+        },
+        "8D2": {
+            "name": "8 of Diamonds",
+            "image": "https://i.imgur.com/V5ept0p.png",
+            "code": "8D2"
+        },
+        "9D2": {
+            "name": "9 of Diamonds",
+            "image": "https://i.imgur.com/hBD92lL.png",
+            "code": "9D2"
+        },
+        "10D2": {
+            "name": "10 of Diamonds",
+            "image": "https://i.imgur.com/8pFGjvW.png",
+            "code": "10D2"
+        },
+        "11D2": {
+            "name": "Jack of Diamonds",
+            "image": "https://i.imgur.com/Y88ZNp1.png",
+            "code": "11D2"
+        },
+        "12D2": {
+            "name": "Queen of Diamonds",
+            "image": "https://i.imgur.com/wRDO43i.png",
+            "code": "12D2"
+        },
+        "13D2": {
+            "name": "King of Diamonds",
+            "image": "https://i.imgur.com/vSD3m2W.png",
+            "code": "13D2"
         }
     }
 }
