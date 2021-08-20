@@ -203,7 +203,6 @@ async def daily(ctx):
             rarity_space= ' ' * (23 - len(card_rarity * 2))
             embed = discord.Embed(description=f'`NAME: {card_name}{name_space}`\n`RARITY: {card_rarity}{rarity_space}`\n`CODE: {card_code}{code_space}`', colour=discord.Color.from_rgb(0,255,133))
             embed.set_author(name='DAILY', icon_url=f'{ctx.author.avatar_url}')
-            embed.set_image(url=f'{card_image}')
             await ctx.send(embed=embed)
         else:
             embed = discord.Embed(description='Oops, it looks like you don\'t have an account.', colour=discord.Color.from_rgb(225,29,98))
@@ -244,7 +243,6 @@ async def weekly(ctx):
             rarity_space= ' ' * (23 - len(card_rarity * 2))
             embed = discord.Embed(description=f'`NAME: {card_name}{name_space}`\n`RARITY: {card_rarity}{rarity_space}`\n`CODE: {card_code}{code_space}`', colour=discord.Color.from_rgb(0,255,133))
             embed.set_author(name='WEEKLY', icon_url=f'{ctx.author.avatar_url}')
-            embed.set_image(url=f'{card_image}')
             await ctx.send(embed=embed)
         else:
             embed = discord.Embed(description='Oops, it looks like you don\'t have an account.', colour=discord.Color.from_rgb(225,29,98))
