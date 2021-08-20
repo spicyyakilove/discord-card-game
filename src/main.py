@@ -20,6 +20,12 @@ import os
 
 client = commands.Bot(command_prefix='!', case_insensitive=True, help_command=None)
 
+staff = [
+    "389897179701182465", # Gareth
+    "221188745414574080", # Snow
+    "770699812722966578" # Joyce
+]
+
 filepath_player_0 = 'users\\users.json'
 filepath_rarity_1 = 'cards\\rarity1.json'
 filepath_rarity_2 = 'cards\\rarity2.json'
@@ -104,6 +110,17 @@ def add_card(ctx, card_code):
 ###     COMMANDS                                                                                        ###
 ###########################################################################################################
 
+
+
+@client.command()
+async def bot(ctx):
+    string_user_id = str(ctx.author.id)
+    if string_user_id in staff:
+        global startTime
+        uptime = str(datetime.timedelta(seconds=int(round(time.time()-start_time))))
+        await ctx.send(f'`Status: Online | Ping: {round(client.latency * 1000)}ms | Uptime: {uptime}`')
+    else:
+        await ctx.send('`Oops, you do not have permissions to use this command.`')
 
 
 @client.command()
