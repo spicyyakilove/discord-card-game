@@ -1,11 +1,9 @@
 # Discord Card Game
 > A discord bot made using the discord.py API wrapper.
 
-<hr><div>
+<hr><div style="text-align: center;">
     <img src="./config/ace-of-spades.png" alt="Ace of Spades" style="width:150px;"/>
     <img src="./config/ace-of-hearts.png" alt="Ace of Hearts" style="width:150px;"/>
-    <img src="./config/ace-of-diamonds.png" alt="Ace of Diamonds" style="width:150px;"/>
-    <img src="./config/ace-of-clubs.png" alt="Ace of Clubs" style="width:150px;"/>
 </div><hr>
 
 ## Contributing
