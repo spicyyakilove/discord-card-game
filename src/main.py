@@ -270,7 +270,7 @@ async def balance(ctx):
             formatted = ('{:,}').format(balance)
             with open(filepath_player_0, 'w') as file:
                 json.dump(users, file, indent=4)
-            embed = discord.Embed(description=f'Your current balance is ${formatted}', colour=discord.Color.from_rgb(0,255,133))
+            embed = discord.Embed(description=f'Your current balance is **${formatted}**', colour=discord.Color.from_rgb(0,255,133))
             embed.set_author(name='BALANCE', icon_url=f'{ctx.author.avatar_url}')
             await ctx.send(embed=embed)
         else:
