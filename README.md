@@ -1,10 +1,8 @@
 # Discord Card Game
-> A discord bot made using the discord.py API wrapper.
 
-<hr><div style="text-align: center;">
-    <img src="./config/ace-of-spades.png" alt="Ace of Spades" style="width:150px;"/>
-    <img src="./config/ace-of-hearts.png" alt="Ace of Hearts" style="width:150px;"/>
-</div><hr>
+## About
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dapibus neque at rhoncus porttitor. Nulla quis efficitur felis. Sed vel imperdiet velit, nec volutpat nibh. Duis ultrices interdum orci nec gravida. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed rhoncus malesuada eros, in egestas nulla aliquam at. Duis non ipsum tincidunt, dapibus leo at, interdum mauris. Nulla non congue sapien. Quisque ultricies bibendum nibh quis faucibus.
+
 
 ## Contributing
 ```
@@ -15,7 +13,8 @@ Push to the branch (git push origin feature/...)
 Create a new Pull Request
 ```
 
+
 ## License
 ```
-This project is under the MIT license. See LICENSE for more details.
+This project is under the MIT license. See LICENSE for more details.**
 ```
