@@ -4,6 +4,14 @@ import random
 database = sqlite3.connect('./database/database.sqlite')
 cursor = database.cursor()
 
+def check_users_exists(userid):
+    cursor.execute(f"SELECT userid FROM Users WHERE userid={userid};")
+    return cursor.fetchone()
+
+def check_if_blacklisted(userid):
+    cursor.execute(f"SELECT blacklist FROM Users WHERE userid={userid};")
+    return cursor.fetchone()[0]
+
 def select_card_rarity():
     random_number = random.randint(0, 1000)
     if random_number <= 1:
@@ -23,12 +31,12 @@ def select_card_rarity():
 
 def select_random_card(rarity):
     query1 = f"SELECT code FROM Cards WHERE rarity={rarity};"
-    cursor.execute(query1); database.commit()
+    cursor.execute(query1)
     cardlist = cursor.fetchall()
     code = random.choice(cardlist)
     code = code[0]
     query2 = f"SELECT game, team, player, issue, teamyear, image FROM Cards WHERE code='{code}';"
-    cursor.execute(query2); database.commit()
+    cursor.execute(query2)
     game, team, player, issue, teamyear, image = cursor.fetchall()[0]
     return(code, game, team, player, issue, teamyear, image)
 
