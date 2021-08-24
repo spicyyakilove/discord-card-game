@@ -23,8 +23,16 @@ class weekly(commands.Cog):
             insert_card(code, game, team, player, rarity, issue, userid)
             balance = select_balance_rarity()
             add_balance(balance, userid)
-            embed = discord.Embed(description=f'`GAME: {game}`\n`TEAM: {team}`\n`PLAYER: {player}`\n`RARITY: {rarity}`\n`ISSUE: {issue+1}`\n`CODE: {code}`\n \n`BAL: +{balance}`', colour=discord.Color.from_rgb(0,255,133))
+            issue_str = str(issue)
+            bal_str = str(balance)
+            g_space = ' ' * (31 - len(game))
+            t_space = ' ' * (31 - len(team))
+            p_space = ' ' * (31 - len(player))
+            c_space = ' ' * (30 - (len(code) + len(issue_str)))
+            b_space = ' ' * (24 - len(bal_str))
+            embed = discord.Embed(description=f'`{game}{g_space}`\n`{team}{t_space}`\n`{player}{p_space}`\n`{code}#{issue+1}{c_space}`\n`+{balance} Coins{b_space}`', colour=discord.Color.from_rgb(0,0,0))
             embed.set_author(name='WEEKLY', icon_url=f'{ctx.author.avatar_url}')
+            embed.set_image(url=f'{image}')
             await ctx.send(embed=embed)
 
 def setup(client):
