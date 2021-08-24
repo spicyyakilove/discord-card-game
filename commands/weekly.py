@@ -19,8 +19,8 @@ class weekly(commands.Cog):
         while rarity == '1':
             rarity = select_card_rarity()
         else:
-            code, game, team, player, issue, image = select_random_card(rarity)
-            insert_card(code, game, team, player, rarity, issue, userid)
+            code, game, team, player, issue, teamyear, image = select_random_card(rarity)
+            insert_card(game, team, player, rarity, issue, teamyear, code, userid, image)
             balance = select_balance_rarity()
             add_balance(balance, userid)
             issue_str = str(issue)

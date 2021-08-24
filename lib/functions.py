@@ -23,18 +23,18 @@ def select_card_rarity():
 
 def select_random_card(rarity):
     query1 = f"SELECT code FROM Cards WHERE rarity={rarity};"
-    cursor.execute(query1); database.commit();
+    cursor.execute(query1); database.commit()
     cardlist = cursor.fetchall()
     code = random.choice(cardlist)
     code = code[0]
-    query2 = f"SELECT game, team, player, issue, image FROM Cards WHERE code='{code}';"
-    cursor.execute(query2); database.commit();
-    game, team, player, issue, image = cursor.fetchall()[0]
-    return(code, game, team, player, issue, image)
+    query2 = f"SELECT game, team, player, issue, teamyear, image FROM Cards WHERE code='{code}';"
+    cursor.execute(query2); database.commit()
+    game, team, player, issue, teamyear, image = cursor.fetchall()[0]
+    return(code, game, team, player, issue, teamyear, image)
 
-def insert_card(code, game, team, player, rarity, issue, userid):
-    query1 = f"INSERT INTO UserCards VALUES ('{code}', '{game}', '{team}', '{player}', {rarity}, {issue+1}, {userid})"
-    cursor.execute(query1); database.commit();
+def insert_card(game, team, player, rarity, issue, teamyear, code, userid, image):
+    query1 = f"INSERT INTO UserCards VALUES ('{game}', '{team}', '{player}', {rarity}, {issue+1}, {teamyear}, '{code}', {userid}, '{image}')"
+    cursor.execute(query1); database.commit()
     query2 = f"UPDATE Cards SET issue=issue+1 WHERE code='{code}'"
     cursor.execute(query2); database.commit()
 

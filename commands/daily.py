@@ -16,8 +16,8 @@ class daily(commands.Cog):
     async def daily(self, ctx):
         userid = int(ctx.author.id)
         rarity = select_card_rarity()
-        code, game, team, player, issue, image = select_random_card(rarity)
-        insert_card(code, game, team, player, rarity, issue, userid)
+        code, game, team, player, issue, teamyear, image = select_random_card(rarity)
+        insert_card(game, team, player, rarity, issue, teamyear, code, userid, image)
         issue_str = str(issue)
         g_space = ' ' * (31 - len(game))
         t_space = ' ' * (31 - len(team))
