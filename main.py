@@ -16,6 +16,7 @@ for filename in os.listdir('./commands'):
         client.load_extension(f'commands.{filename[:-3]}')
 
 @client.command()
+@commands.is_owner()
 async def deactivate(ctx, command=None):
     if command == None:
         for filename in os.listdir('./commands'):
@@ -27,6 +28,7 @@ async def deactivate(ctx, command=None):
         await ctx.send(f'`{command.capitalize()} has been deactivated.`')
 
 @client.command()
+@commands.is_owner()
 async def activate(ctx, command=None):
     if command == None:
         for filename in os.listdir('./commands'):
