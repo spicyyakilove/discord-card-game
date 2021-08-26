@@ -20,7 +20,7 @@ def check_if_blacklisted(userid):
     return cursor.fetchone()[0]
 
 def blacklist_embed(ctx):
-    embed = discord.Embed(description='Your account has been blacklisted.', colour=discord.Color.from_rgb(255,0,0))
+    embed = discord.Embed(description='Your account has been blacklisted!', colour=discord.Color.from_rgb(255,0,0))
     embed.set_author(name=f'{ctx.author.name}', icon_url=f'{ctx.author.avatar_url}')
     embed.set_footer(text='DM Gareth#3830 for more information.')
     return embed
