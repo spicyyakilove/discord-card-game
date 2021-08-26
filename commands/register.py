@@ -18,7 +18,7 @@ class register(commands.Cog):
         userid = int(ctx.author.id)
         registered = check_users_exists(userid)
         if registered != None:
-            embed = discord.Embed(description='Oops, it looks like you already have an account.', colour=discord.Color.from_rgb(255,0,0))
+            embed = discord.Embed(description='You already have an account. Get playing!', colour=discord.Color.from_rgb(255,0,0))
             embed.set_author(name=f'{ctx.author.name}', icon_url=f'{ctx.author.avatar_url}')
             embed.set_footer(text='You can use !help to see a full list of commands.')
             await ctx.send(embed=embed)
