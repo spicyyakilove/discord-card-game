@@ -38,9 +38,7 @@ class inventory(commands.Cog):
             ## SNOW ⬇️⬇️                                                                                     ##
             ####################################################################################################
             totalpages = (len(cardlist) // 20)
-            print(totalpages)
             remainder = len(cardlist) % 20
-            i = 0
             for i in range(totalpages):
                 desc = ''
                 for k in range(20):
@@ -48,10 +46,11 @@ class inventory(commands.Cog):
                     desc = desc + f'\n` {j[5]}⭐ `—` {j[2]} {j[3]} `—` {j[0]}#{j[6]} `'
                 embeds.append(discord.Embed(description=f'{desc_title}\n{desc}', colour=discord.Color.from_rgb(0,0,0))
                 .set_author(name='INVENTORY', icon_url=f'{ctx.author.avatar_url}'))
+                desc = ''
             for i in range(remainder):
                 desc = desc + f'\n` {cardlist[totalpages+i][5]}⭐ `—` {cardlist[totalpages+i][2]} {cardlist[totalpages+i][3]} `—` {cardlist[totalpages+i][0]}#{cardlist[totalpages+i][6]} `'
-                embeds.append(discord.Embed(description=f'{desc_title}\n{desc}', colour=discord.Color.from_rgb(0,0,0))
-                .set_author(name='INVENTORY', icon_url=f'{ctx.author.avatar_url}'))
+            embeds.append(discord.Embed(description=f'{desc_title}\n{desc}', colour=discord.Color.from_rgb(0,0,0))
+            .set_author(name='INVENTORY', icon_url=f'{ctx.author.avatar_url}'))
             paginator = BotEmbedPaginator(ctx, embeds)
             await paginator.run()
             ####################################################################################################
