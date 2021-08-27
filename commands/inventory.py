@@ -22,7 +22,7 @@ class inventory(commands.Cog):
             username = str(user.name)
             userid = int(user.id)
         
-        cursor.execute(f'SELECT code, game, team, player, teamyear, rarity, issue FROM UserCards WHERE userid={userid};')
+        cursor.execute(f'SELECT code, game, team, player, teamyear, rarity, issue FROM UserCards WHERE userid={userid} ORDER BY rarity ASC, player ASC, issue ASC;')
         cardlist = cursor.fetchall()
         embeds = []
 
@@ -46,7 +46,7 @@ class inventory(commands.Cog):
                     desc = desc + f'\n` {j[5]}⭐ `—` {j[2]} {j[3]} `—` {j[0]}#{j[6]} `'
                 embeds.append(discord.Embed(description=f'{desc_title}\n{desc}', colour=discord.Color.from_rgb(0,0,0))
                 .set_author(name='INVENTORY', icon_url=f'{ctx.author.avatar_url}'))
-                desc = ''
+            desc = ''
             for i in range(remainder):
                 desc = desc + f'\n` {cardlist[totalpages+i][5]}⭐ `—` {cardlist[totalpages+i][2]} {cardlist[totalpages+i][3]} `—` {cardlist[totalpages+i][0]}#{cardlist[totalpages+i][6]} `'
             embeds.append(discord.Embed(description=f'{desc_title}\n{desc}', colour=discord.Color.from_rgb(0,0,0))
